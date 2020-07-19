@@ -29,6 +29,22 @@ class BinarySearchTree {
       }
     }
   }
+  
+  find (value) {
+    if (!this.root) return undefined;
+
+    let current = this.root;
+    while (true) {
+      if (value === current.value) return current;
+      if (value < current.value) {
+        if (!current.left) return undefined;
+        current = current.left;
+      } else {
+        if (!current.right) return undefined;
+        current = current.right;
+      }
+    }
+  }
 }
 
 class Node {
